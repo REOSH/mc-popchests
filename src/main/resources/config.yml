@@ -1,5 +1,0 @@
-all-worlds: true
-enabled-worlds:
-  - world
-  - world_nether
-  - world_the_end
