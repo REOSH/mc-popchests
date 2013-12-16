@@ -2,10 +2,10 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>PopChests</groupId>
   <artifactId>PopChests</artifactId>
-  <version>1.0-beta.0</version>
+  <version>1.0-beta.1</version>
   <name>PopChests</name>
   <packaging>jar</packaging>
-  <url>https://bitbucket.org/Wickedskipper/popchests</url>
+  <url>https://github.com/REOSH/mc-popchests/</url>
   <repositories>
   	<repository>
 	  <id>bukkit-repo</id>
