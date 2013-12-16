@@ -1,8 +1,9 @@
-package uk.co.reosh.lotr.PopChests.Events;
+package uk.co.reosh.PopChests.Events;
 
 import org.bukkit.Effect;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
+import org.bukkit.block.BlockFace;
 import org.bukkit.block.Chest;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -14,11 +15,11 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
 
-import uk.co.reosh.lotr.PopChests.PopChests;
+import uk.co.reosh.PopChests.PopChests;
 
 public class PlayerInteract implements Listener {
 
-    @EventHandler(priority = EventPriority.HIGH)
+    @EventHandler(priority = EventPriority.NORMAL)
     public void ExplosionCreation(PlayerInteractEvent event){
     	if(event.getAction() == Action.LEFT_CLICK_BLOCK) {
 	    	if(event.getClickedBlock().getType() == Material.CHEST && event.getPlayer().getGameMode() != GameMode.CREATIVE) {
@@ -45,10 +46,10 @@ public class PlayerInteract implements Listener {
     	}
 
     	chest.getInventory().clear();
-    	player.playEffect(chest.getLocation(), Effect.MOBSPAWNER_FLAMES, 10);
-    	player.playEffect(chest.getLocation().add(new Vector(0,1.5,0)), Effect.MOBSPAWNER_FLAMES, 10);
-    	player.playEffect(chest.getLocation().add(new Vector(0,0,1.5)), Effect.MOBSPAWNER_FLAMES, 10);
-    	player.playEffect(chest.getLocation().add(new Vector(1.5,0,0)), Effect.MOBSPAWNER_FLAMES, 10);
+    	player.playEffect(chest.getLocation(), Effect.MOBSPAWNER_FLAMES, BlockFace.UP);
+    	player.playEffect(chest.getLocation().add(new Vector(0,1.5,0)), Effect.MOBSPAWNER_FLAMES, BlockFace.UP);
+    	player.playEffect(chest.getLocation().add(new Vector(0,0,1.5)), Effect.MOBSPAWNER_FLAMES, BlockFace.UP);
+    	player.playEffect(chest.getLocation().add(new Vector(1.5,0,0)), Effect.MOBSPAWNER_FLAMES, BlockFace.UP);
     	chest.getBlock().setType(Material.AIR);
     }
 }
