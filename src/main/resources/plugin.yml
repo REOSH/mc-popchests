@@ -1,0 +1,4 @@
+name: PopChests
+main: uk.co.reosh.PopChests.PopChests
+version: ${project.version}
+description: Punch a chest to empty it on the floor playing some effects.
